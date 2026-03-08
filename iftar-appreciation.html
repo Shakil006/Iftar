@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Iftar Appreciation — Statesboro Mosque</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Amiri:wght@400;700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9962A;
+    --gold-light: #F0C96A;
+    --deep-teal: #0B3D40;
+    --teal: #145C60;
+    --teal-mid: #1E7A80;
+    --cream: #FDF6E9;
+    --warm-white: #FFFDF7;
+    --text-dark: #1a1a1a;
+    --text-mid: #3a3a3a;
+    --text-soft: #6a6a6a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--cream);
+    font-family: 'Nunito', sans-serif;
+    color: var(--text-dark);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(160deg, var(--deep-teal) 0%, var(--teal) 55%, #1A6B50 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 60px 24px 52px;
+    text-align: center;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,150,42,0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 40% at 80% 100%, rgba(201,150,42,0.10) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  /* geometric moon arc */
+  .hero::after {
+    content: '☽';
+    position: absolute;
+    top: -10px;
+    right: 18px;
+    font-size: 110px;
+    color: rgba(201,150,42,0.13);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .arabic-top {
+    font-family: 'Amiri', serif;
+    font-size: 2.2rem;
+    color: var(--gold-light);
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+    animation: fadeDown 0.7s ease both;
+  }
+
+  .hero-title {
+    font-family: 'Lora', serif;
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 8px;
+    animation: fadeDown 0.8s 0.1s ease both;
+  }
+
+  .hero-title span {
+    color: var(--gold-light);
+  }
+
+  .hero-sub {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    animation: fadeDown 0.9s 0.2s ease both;
+  }
+
+  .divider-gold {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto 28px;
+    animation: fadeIn 1s 0.4s ease both;
+  }
+  .divider-gold span { color: var(--gold); font-size: 1.1rem; }
+  .divider-gold::before,
+  .divider-gold::after {
+    content: '';
+    flex: 1;
+    max-width: 80px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold));
+  }
+  .divider-gold::after { background: linear-gradient(to left, transparent, var(--gold)); }
+
+  .hero-intro {
+    font-family: 'Lora', serif;
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.88);
+    line-height: 1.75;
+    max-width: 380px;
+    margin: 0 auto;
+    font-style: italic;
+    animation: fadeUp 1s 0.5s ease both;
+  }
+
+  /* ── BANNER STRIP ── */
+  .banner-strip {
+    background: linear-gradient(90deg, var(--gold) 0%, #E8B040 50%, var(--gold) 100%);
+    padding: 14px 24px;
+    text-align: center;
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--deep-teal);
+    letter-spacing: 0.5px;
+    animation: fadeIn 1s 0.7s ease both;
+  }
+
+  /* ── BODY CONTENT ── */
+  .content {
+    padding: 32px 20px 48px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .opening-card {
+    background: var(--warm-white);
+    border-left: 4px solid var(--gold);
+    border-radius: 12px;
+    padding: 22px 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 20px rgba(11,61,64,0.08);
+    animation: fadeUp 0.8s 0.6s ease both;
+  }
+
+  .opening-card p {
+    font-family: 'Lora', serif;
+    font-size: 1.02rem;
+    line-height: 1.8;
+    color: var(--text-mid);
+    margin-bottom: 14px;
+  }
+  .opening-card p:last-child { margin-bottom: 0; }
+
+  .opening-card .highlight {
+    font-weight: 700;
+    color: var(--teal);
+  }
+
+  /* ── SECTION HEADER ── */
+  .section-label {
+    text-align: center;
+    font-family: 'Amiri', serif;
+    font-size: 1.5rem;
+    color: var(--gold);
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    animation: fadeIn 0.8s 0.8s ease both;
+  }
+
+  /* ── PERSON CARDS ── */
+  .cards-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .card {
+    background: var(--warm-white);
+    border-radius: 16px;
+    padding: 20px 18px;
+    box-shadow: 0 6px 24px rgba(11,61,64,0.09);
+    border-top: 3px solid transparent;
+    position: relative;
+    overflow: hidden;
+    animation: fadeUp 0.7s ease both;
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--teal-mid));
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .card-emoji {
+    font-size: 1.8rem;
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, var(--deep-teal), var(--teal-mid));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 3px 10px rgba(11,61,64,0.25);
+  }
+
+  .card-name {
+    font-family: 'Lora', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--deep-teal);
+  }
+
+  .card-name .tag {
+    display: inline-block;
+    background: var(--gold-light);
+    color: var(--deep-teal);
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 20px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  .card-body {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-mid);
+  }
+
+  .card-body strong {
+    color: var(--teal);
+    font-weight: 700;
+  }
+
+  .card-body em {
+    color: var(--gold);
+    font-style: italic;
+    font-weight: 600;
+  }
+
+  /* animation delays for cards */
+  .card:nth-child(1) { animation-delay: 0.1s; }
+  .card:nth-child(2) { animation-delay: 0.2s; }
+  .card:nth-child(3) { animation-delay: 0.3s; }
+  .card:nth-child(4) { animation-delay: 0.4s; }
+  .card:nth-child(5) { animation-delay: 0.5s; }
+  .card:nth-child(6) { animation-delay: 0.6s; }
+
+  /* ── DIVIDER ── */
+  .ornament-divider {
+    text-align: center;
+    color: var(--gold);
+    font-size: 1.4rem;
+    letter-spacing: 8px;
+    margin: 32px 0 28px;
+    opacity: 0.7;
+  }
+
+  /* ── CLOSING ── */
+  .closing-card {
+    background: linear-gradient(145deg, var(--deep-teal), var(--teal));
+    border-radius: 20px;
+    padding: 30px 22px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(11,61,64,0.3);
+    animation: fadeUp 0.8s 0.9s ease both;
+  }
+
+  .closing-card::before {
+    content: '🌙';
+    position: absolute;
+    font-size: 100px;
+    top: -15px;
+    right: -10px;
+    opacity: 0.1;
+    pointer-events: none;
+  }
+
+  .closing-card .ramadan {
+    font-family: 'Amiri', serif;
+    font-size: 1.8rem;
+    color: var(--gold-light);
+    margin-bottom: 4px;
+  }
+
+  .closing-card .mubarak {
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.9);
+    font-style: italic;
+    margin-bottom: 18px;
+  }
+
+  .closing-card .dua {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.82);
+    line-height: 1.75;
+    margin-bottom: 20px;
+  }
+
+  .closing-card .next-time {
+    background: rgba(201,150,42,0.2);
+    border: 1px solid rgba(201,150,42,0.4);
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gold-light);
+    line-height: 1.6;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    text-align: center;
+    padding: 20px 24px 36px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.78rem;
+    color: var(--text-soft);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="arabic-top">الحمد لله 🤲</div>
+  <div class="hero-title">Alhamdulillah<br><span>— What a Night —</span></div>
+  <div class="hero-sub">Iftar · Statesboro Mosque · Ramadan 2025</div>
+  <div class="divider-gold"><span>✦</span></div>
+  <p class="hero-intro">Yesterday's iftar was truly something special — the kind of evening that reminds you why community matters. Seeing brothers and sisters from all walks come together to break their fast under one roof was deeply humbling.</p>
+</div>
+
+<!-- BANNER -->
+<div class="banner-strip">
+  🕌 150 People · One Team · One Unforgettable Evening
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+  <!-- Opening -->
+  <div class="opening-card">
+    <p>Honestly, organizing an iftar for <span class="highlight">150 people for the first time</span> was nerve-wracking 😅</p>
+    <p>But with a team like this, it turned out so successful that I don't think any of us can go back to an average program anymore 😁</p>
+    <p>This wouldn't have happened without some incredible people. I want to take a moment to recognize each of them:</p>
+  </div>
+
+  <div class="section-label">✦ Our Dream Team ✦</div>
+
+  <!-- Cards -->
+  <div class="cards-list">
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🛒</div>
+        <div class="card-name">Topu</div>
+      </div>
+      <div class="card-body">
+        Thank you for making that grocery run to Atlanta last week and cooking the most incredible <em>mutton chola vuna</em>. Please pass on our heartfelt gratitude to your roommates as well — their help meant everything.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🍚</div>
+        <div class="card-name">Tushar &amp; Nahar</div>
+      </div>
+      <div class="card-body">
+        Handling Atlanta grocery runs last week and pulling off <em>mutton</em> and <em>polao</em> in the middle of your difficult times... that's love. Genuinely. <strong>Thank you.</strong>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🍳</div>
+        <div class="card-name">Dipto &amp; Aurin</div>
+      </div>
+      <div class="card-body">
+        Who knew <em>egg vuna</em> would be <strong>the dish of the night?</strong> People who usually skip the egg were going back for seconds 😄 Dipto, your last-minute Walmart/Krishna runs over two days on urgent notice — <strong>absolute MVP energy.</strong>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🎂</div>
+        <div class="card-name">Sumayya</div>
+      </div>
+      <div class="card-body">
+        They don't call you <em>"the Desert Queen"</em> 👑 for nothing — the cake, the <em>payes</em>, the kebabs — all legendary. You never disappoint.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">🔥</div>
+        <div class="card-name">Arif</div>
+      </div>
+      <div class="card-body">
+        My most heartfelt thanks to you. You cooked tirelessly <strong>and</strong> managed your hotel duties just so I could be free to handle everything else. That sacrifice doesn't go unnoticed.<br><br>
+        Please pass my sincere thanks to <strong>Asif vai</strong> as well — his help with the chicken cutting and cooking was invaluable.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-emoji">✅</div>
+        <div class="card-name">Iffat <span class="tag">Quality Manager</span></div>
+      </div>
+      <div class="card-body">
+        Thank you for being my quality manager, as always. <strong>None of this runs right without you.</strong>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="ornament-divider">✦ ✦ ✦</div>
+
+  <!-- Closing -->
+  <div class="closing-card">
+    <div class="ramadan">رمضان مبارك</div>
+    <div class="mubarak">Ramadan Mubarak to everyone who joined us 🌙</div>
+    <div class="dua">May Allah accept from all of us.<br>In sha Allah, the best is yet to come.</div>
+    <div class="next-time">
+      Next time we come back with something even bigger and more remarkable.<br>The bar has been set — <em style="color:#F0C96A">let's raise it!</em> 🙌
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">Statesboro · Georgia · Ramadan 2025</div>
+
+</body>
+</html>
